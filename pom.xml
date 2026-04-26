@@ -9,13 +9,13 @@
   <artifactId>pgr1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <!-- ✅ Java version -->
+  <!-- Java version -->
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
-  <!-- ✅ Dependencies -->
+  <!-- TestNG dependency -->
   <dependencies>
     <dependency>
       <groupId>org.testng</groupId>
@@ -25,14 +25,23 @@
     </dependency>
   </dependencies>
 
-  <!-- ✅ Needed to run TestNG -->
   <build>
     <plugins>
+
+      <!-- Compiler plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+      </plugin>
+
+      <!-- Surefire plugin (NO testng.xml config) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M7</version>
       </plugin>
+
     </plugins>
   </build>
 
